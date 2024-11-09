@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return a Car</title>
+    <link rel="stylesheet" href="./static/styles.css">
+</head>
+<body>
+    <h1>Return a Car</h1>
+    <form method="POST">
+        <label for="rental_id">Rental ID:</label><br>
+        <input type="number" name="rental_id" required><br><br>
+        <button type="submit">Return Car</button>
+    </form>
+    <p>{{ get_flashed_messages()[0] }}</p>
+    <a href="{{ url_for('list_cars') }}">Back to Available Cars</a> |
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

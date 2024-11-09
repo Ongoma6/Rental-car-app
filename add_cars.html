@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add a Car</title>
+    <link rel="stylesheet" href="./static/styles.css">
+</head>
+<body>
+    <h1>Add a Car</h1>
+    <form method="POST">
+        <label for="car_id">Car ID:</label><br>
+        <input type="text" name="car_id" required><br><br>
+        <label for="car_type">Car Type:</label><br>
+        <input type="text" name="car_type" required><br><br>
+        <button type="submit">Add Car</button>
+    </form>
+    <p>{{ get_flashed_messages()[0] }}</p>
+    <a href="{{ url_for('list_cars') }}">Back to Available Cars</a> |
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>

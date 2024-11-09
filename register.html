@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="./static/styles.css">
+</head>
+<body>
+    <h1>Register</h1>
+    <form method="POST">
+        <label for="username">Username:</label><br>
+        <input type="text" name="username" required><br><br>
+        <label for="password">Password:</label><br>
+        <input type="password" name="password" required><br><br>
+        <button type="submit">Register</button>
+    </form>
+    <p>{{ get_flashed_messages()[0] }}</p>
+    <a href="{{ url_for('login') }}">Already have an account? Login here</a>
+</body>
+</html>

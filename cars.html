@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Available Cars</title>
+    <link rel="stylesheet" href="./static/styles.css">
+</head>
+<body>
+    <h1>Available Cars</h1>
+    <table>
+        <tr>
+            <th>Car ID</th>
+            <th>Car Type</th>
+            <th>Status</th>
+        </tr>
+        {% for car in cars %}
+        <tr>
+            <td>{{ car['car_id'] }}</td>
+            <td>{{ car['car_type'] }}</td>
+            <td>{{ 'Available' if car['is_available'] == 1 else 'Not Available' }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('rent_car') }}">Rent a Car</a> |
+    <a href="{{ url_for('add_car') }}">Add a Car</a> |
+    <a href="{{ url_for('logout') }}">Logout</a>
+</body>
+</html>
